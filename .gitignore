@@ -1,3 +1,15 @@
 # Project exclude paths
 /.gradle/
 /app/build/
+.gradle/
+build/
+*/build/
+local.properties
+*.iml
+.idea/
+.DS_Store
+
+# signing keys / passwords
+*.jks
+*.keystore
+keystore.properties
