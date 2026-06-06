@@ -19,6 +19,7 @@ import com.ilhomsoliev.gamehubandroid.feature.home.presentation.HomeScreen
 import com.ilhomsoliev.gamehubandroid.feature.library.presentation.LibraryScreen
 import com.ilhomsoliev.gamehubandroid.feature.profile.presentation.ProfileScreen
 import com.ilhomsoliev.gamehubandroid.feature.search.presentation.SearchScreen
+import com.ilhomsoliev.gamehubandroid.feature.settings.SettingsScreen
 import com.ilhomsoliev.gamehubandroid.feature.splash.SplashScreen
 
 @Composable
@@ -118,7 +119,15 @@ fun NavigationApp(modifier: Modifier = Modifier) {
       }
 
       composable<NavRoute.Profile> {
-        ProfileScreen()
+        ProfileScreen(openSettings = {
+          navController.navigate(NavRoute.Settings)
+        })
+      }
+
+      composable<NavRoute.Settings> {
+        SettingsScreen(goBack = {
+          navController.popBackStack()
+        })
       }
 
       composable<NavRoute.GameDetail> { backStackEntry ->

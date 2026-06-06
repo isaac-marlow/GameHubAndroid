@@ -30,6 +30,7 @@ fun GHTopAppBarPreview() {
 fun GHTopAppBar(
   title: String,
   actions: @Composable RowScope.() -> Unit = {},
+  navigation: @Composable () -> Unit = {},
 ) {
   TopAppBar(
     colors = TopAppBarColors(
@@ -46,6 +47,7 @@ fun GHTopAppBar(
         color = AppTheme.colors.primary
       )
     },
+    navigationIcon = navigation,
     actions = actions
   )
 }

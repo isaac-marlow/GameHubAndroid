@@ -15,7 +15,9 @@ class ProfileViewModel() : ViewModel() {
       ProfileUiAction.OpenEditProfile -> TODO()
       ProfileUiAction.OpenRecentlyViewed -> TODO()
       ProfileUiAction.OpenSavedPosts -> TODO()
-      ProfileUiAction.OpenSettings -> TODO()
+      ProfileUiAction.OpenSettings -> {
+
+      }
     }
   }
 }

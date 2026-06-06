@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -22,16 +23,20 @@ fun GHSlot(
   modifier: Modifier = Modifier,
   icon: ImageVector,
   text: String,
-  actionIcon: ImageVector,
-  hasDivider: Boolean,
-  onClick: () -> Unit
+  subtitle: String? = null,
+  actionIcon: ImageVector? = null,
+  hasDivider: Boolean = false,
+  subcontent: (@Composable () -> Unit)? = null,
+  onClick: (() -> Unit)? = null
 ) {
   Column(
     modifier = modifier
-      .clickable(onClick = onClick)
+      .then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier)
   ) {
     Row(
-      modifier = Modifier.fillMaxWidth(),
+      modifier = Modifier
+        .fillMaxWidth()
+        .height(40.dp),
       verticalAlignment = Alignment.CenterVertically
     ) {
       Row(
@@ -40,20 +45,37 @@ fun GHSlot(
       ) {
         Icon(icon, contentDescription = "", tint = AppTheme.colors.onSurface)
         SpacerH(12.dp)
-        Text(
-          text = text,
-          style = AppTheme.typography.bodyLarge,
-          color = AppTheme.colors.onSurfaceVar,
-        )
+        Column {
+          Text(
+            text = text,
+            style = AppTheme.typography.bodyLarge,
+            color = AppTheme.colors.onSurface,
+          )
+          if (subtitle != null) {
+            SpacerV(4.dp)
+            Text(
+              text = subtitle,
+              style = AppTheme.typography.bodyMedium,
+              color = AppTheme.colors.onSurfaceVar,
+            )
+          }
+        }
       }
 
       Row(
-        modifier = Modifier.weight(1f),
+        modifier = Modifier,
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.End
       ) {
-        Icon(actionIcon, contentDescription = "", tint = AppTheme.colors.onSurface)
+        actionIcon?.let {
+          Icon(actionIcon, contentDescription = "", tint = AppTheme.colors.onSurface)
+        }
       }
+    }
+
+    if (subcontent != null) {
+      SpacerV(12.dp)
+      subcontent.invoke()
     }
 
     if (hasDivider) {
