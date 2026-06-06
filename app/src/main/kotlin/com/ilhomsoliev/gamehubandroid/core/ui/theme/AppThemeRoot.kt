@@ -35,7 +35,7 @@ private fun UpdateStatusBarColor() {
   val view = LocalView.current
   if (view.isInEditMode) return
 
-  val backgroundColor = AppTheme.colors.background
+  val backgroundColor = AppTheme.colors.surface
   val useDarkIcons = backgroundColor.luminance() > 0.5f
 
   SideEffect {

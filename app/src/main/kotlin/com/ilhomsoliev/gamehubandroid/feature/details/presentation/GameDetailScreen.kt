@@ -137,8 +137,8 @@ fun GameDetailContent(
             Text(
               modifier = Modifier.padding(horizontal = 12.dp),
               text = "Visually similar games",
-              style = AppTheme.typography.title.copy(fontSize = 18.sp),
-              color = AppTheme.colors.text
+              style = AppTheme.typography.titleLarge.copy(fontSize = 18.sp),
+              color = AppTheme.colors.onSurface
             )
             SpacerV(12.dp)
             BoxWithConstraints(modifier = Modifier.fillMaxWidth()) {

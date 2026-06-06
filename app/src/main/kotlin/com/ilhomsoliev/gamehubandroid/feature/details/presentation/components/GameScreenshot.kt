@@ -41,8 +41,8 @@ fun LazyItemScope.GameScreenshot(
   ) {
     Text(
       text = "Screenshots & Media",
-      style = AppTheme.typography.title.copy(fontSize = 18.sp),
-      color = AppTheme.colors.text
+      style = AppTheme.typography.titleLarge.copy(fontSize = 18.sp),
+      color = AppTheme.colors.onSurface
     )
     SpacerV(12.dp)
 

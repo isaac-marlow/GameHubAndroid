@@ -69,8 +69,8 @@ fun LazyItemScope.GenreCarouselWithLabel(
   Text(
     text = "Browse by Genre",
     modifier = Modifier.padding(horizontal = 12.dp),
-    style = AppTheme.typography.label.copy(fontSize = 18.sp),
-    color = AppTheme.colors.text
+    style = AppTheme.typography.labelMedium.copy(fontSize = 18.sp),
+    color = AppTheme.colors.onSurface
   )
   SpacerV(16.dp)
 
@@ -104,8 +104,8 @@ fun LazyItemScope.GenreCarouselWithLabel(
         )
         Text(
           text = genreModel.name,
-          color = AppTheme.colors.text,
-          style = AppTheme.typography.label
+          color = AppTheme.colors.onSurface,
+          style = AppTheme.typography.labelMedium
         )
       }
     }

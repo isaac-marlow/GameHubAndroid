@@ -54,8 +54,8 @@ fun LazyItemScope.GameSystemRequirements(
     ) {
       Text(
         text = "System Requirements",
-        style = AppTheme.typography.title.copy(fontSize = 18.sp),
-        color = AppTheme.colors.text
+        style = AppTheme.typography.titleLarge.copy(fontSize = 18.sp),
+        color = AppTheme.colors.onSurface
       )
 
       Icon(
@@ -65,7 +65,7 @@ fun LazyItemScope.GameSystemRequirements(
           Icons.Filled.KeyboardArrowDown
         },
         contentDescription = if (isExpanded) "collapse" else "expand",
-        tint = AppTheme.colors.secondaryText
+        tint = AppTheme.colors.onSurface
       )
 
     }
@@ -76,21 +76,21 @@ fun LazyItemScope.GameSystemRequirements(
 
         Text(
           text = "Minimum",
-          style = AppTheme.typography.title,
+          style = AppTheme.typography.titleLarge,
           color = AppTheme.colors.primary
         )
         SpacerV(12.dp)
 
         Text(
           text = requirements.minimum,
-          style = AppTheme.typography.body,
-          color = AppTheme.colors.secondaryText
+          style = AppTheme.typography.bodyMedium,
+          color = AppTheme.colors.onSurface
         )
         SpacerV(24.dp)
 
         Text(
           text = "Recommended",
-          style = AppTheme.typography.title,
+          style = AppTheme.typography.titleLarge,
           color = AppTheme.colors.primary
         )
 
@@ -98,8 +98,8 @@ fun LazyItemScope.GameSystemRequirements(
 
         Text(
           text = requirements.recommended,
-          style = AppTheme.typography.body,
-          color = AppTheme.colors.secondaryText
+          style = AppTheme.typography.bodyMedium,
+          color = AppTheme.colors.onSurface
         )
       }
     }

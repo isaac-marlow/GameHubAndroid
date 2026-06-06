@@ -1,9 +1,14 @@
 package com.ilhomsoliev.gamehubandroid.feature.details.presentation.components
 
 import androidx.activity.compose.BackHandler
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
-import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.gestures.awaitEachGesture
+import androidx.compose.foundation.gestures.awaitFirstDown
+import androidx.compose.foundation.gestures.calculatePan
+import androidx.compose.foundation.gestures.calculateZoom
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -37,11 +42,6 @@ import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.tween
-import androidx.compose.foundation.gestures.awaitFirstDown
-import androidx.compose.foundation.gestures.calculatePan
-import androidx.compose.foundation.gestures.calculateZoom
 import com.ilhomsoliev.gamehubandroid.core.ui.GlideAsyncImage
 import com.ilhomsoliev.gamehubandroid.core.ui.theme.AppTheme
 import com.ilhomsoliev.gamehubandroid.feature.game.domain.ScreenshotModel
@@ -112,7 +112,7 @@ fun ScreenshotViewerDialog(
         }
         Text(
           text = "${pagerState.currentPage + 1} / ${screenshots.size}",
-          style = AppTheme.typography.body,
+          style = AppTheme.typography.bodyMedium,
           color = Color.White
         )
       }

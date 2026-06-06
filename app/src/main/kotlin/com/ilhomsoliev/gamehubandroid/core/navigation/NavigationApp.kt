@@ -38,7 +38,7 @@ fun NavigationApp(modifier: Modifier = Modifier) {
 
   Scaffold(
     modifier = Modifier.fillMaxSize(),
-    containerColor = AppTheme.colors.background,
+    containerColor = AppTheme.colors.surface,
     bottomBar = {
       if (showBottomBar) {
         BottomNavigationComponent(

@@ -73,7 +73,7 @@ fun GameCarouselItem(
             modifier = Modifier.size(16.dp),
             imageVector = Icons.Default.Computer,
             contentDescription = "computer",
-            tint = AppTheme.colors.secondaryText
+            tint = AppTheme.colors.onSurface
           )
         }
         if (game.isAvailableOnConsole()) {
@@ -83,7 +83,7 @@ fun GameCarouselItem(
             modifier = Modifier.size(16.dp),
             imageVector = Icons.Default.VideogameAsset,
             contentDescription = "console",
-            tint = AppTheme.colors.secondaryText
+            tint = AppTheme.colors.onSurface
           )
         }
 
@@ -96,8 +96,8 @@ fun GameCarouselItem(
       SpacerV(12.dp)
       Text(
         text = game.name,
-        color = AppTheme.colors.text,
-        style = AppTheme.typography.title.copy(fontSize = 16.sp),
+        color = AppTheme.colors.onSurface,
+        style = AppTheme.typography.titleLarge.copy(fontSize = 16.sp),
       )
     }
   }

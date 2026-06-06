@@ -39,16 +39,16 @@ fun LazyItemScope.GameInfo(
   ) {
     Text(
       text = "Game Info",
-      style = AppTheme.typography.title.copy(fontSize = 18.sp),
-      color = AppTheme.colors.text
+      style = AppTheme.typography.titleLarge.copy(fontSize = 18.sp),
+      color = AppTheme.colors.onSurface
     )
     SpacerV(16.dp)
     Row(modifier = Modifier.fillMaxWidth()) {
       Column(modifier = Modifier.weight(1f)) {
         Text(
           text = "Genres",
-          style = AppTheme.typography.body,
-          color = AppTheme.colors.secondaryText
+          style = AppTheme.typography.bodyMedium,
+          color = AppTheme.colors.onSurface
         )
         FlowRow {
           genres.forEach {
@@ -63,8 +63,8 @@ fun LazyItemScope.GameInfo(
 
         Text(
           text = "Tags",
-          style = AppTheme.typography.body,
-          color = AppTheme.colors.secondaryText
+          style = AppTheme.typography.bodyMedium,
+          color = AppTheme.colors.onSurface
         )
         FlowRow {
           tags.take(5).forEach {
@@ -78,16 +78,16 @@ fun LazyItemScope.GameInfo(
       Column(modifier = Modifier.weight(1f)) {
         Text(
           text = "ESRB Rating",
-          style = AppTheme.typography.body,
-          color = AppTheme.colors.secondaryText
+          style = AppTheme.typography.bodyMedium,
+          color = AppTheme.colors.onSurface
         )
 
         SpacerV(12.dp)
 
         Text(
           text = esrbRating ?: "Empty",
-          style = AppTheme.typography.body,
-          color = AppTheme.colors.secondaryText
+          style = AppTheme.typography.bodyMedium,
+          color = AppTheme.colors.onSurface
         )
 
       }

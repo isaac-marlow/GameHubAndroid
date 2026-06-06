@@ -50,13 +50,13 @@ fun GHTextField(
         Icon(
           imageVector = icon,
           contentDescription = "icon",
-          tint = AppTheme.colors.secondaryText
+          tint = AppTheme.colors.onSurface
         )
       },
       placeholder = {
         Text(
           text = placeholder,
-          color = AppTheme.colors.secondaryText
+          color = AppTheme.colors.onSurface
         )
       },
       trailingIcon = {
@@ -69,7 +69,7 @@ fun GHTextField(
             Icon(
               imageVector = Icons.Default.Close,
               contentDescription = "clear",
-              tint = AppTheme.colors.secondaryText
+              tint = AppTheme.colors.onSurface
             )
           }
         }
@@ -80,11 +80,11 @@ fun GHTextField(
         focusedContainerColor = AppTheme.colors.secondary,
         unfocusedContainerColor = AppTheme.colors.secondary,
         disabledContainerColor = AppTheme.colors.secondary,
-        focusedTextColor = AppTheme.colors.text,
-        unfocusedTextColor = AppTheme.colors.text,
-        cursorColor = AppTheme.colors.secondaryText,
-        focusedBorderColor = AppTheme.colors.secondaryText,
-        unfocusedBorderColor = AppTheme.colors.secondaryText,
+        focusedTextColor = AppTheme.colors.onSurface,
+        unfocusedTextColor = AppTheme.colors.onSurface,
+        cursorColor = AppTheme.colors.onSurface,
+        focusedBorderColor = AppTheme.colors.onSurface,
+        unfocusedBorderColor = AppTheme.colors.onSurface,
       )
     )
 
@@ -111,7 +111,7 @@ fun EmailTextFieldPreview() {
     Box(
       modifier = Modifier
         .fillMaxSize()
-        .background(AppTheme.colors.background)
+        .background(AppTheme.colors.surface)
     ) {
       GHTextField(
         value = "",

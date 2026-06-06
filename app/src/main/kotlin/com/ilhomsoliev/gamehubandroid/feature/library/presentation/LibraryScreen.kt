@@ -1,12 +1,12 @@
 package com.ilhomsoliev.gamehubandroid.feature.library.presentation
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.clickable
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -36,15 +36,15 @@ fun LibraryScreen(
     LazyColumn(
       modifier = Modifier
         .fillMaxSize()
-        .background(AppTheme.colors.background)
+        .background(AppTheme.colors.surface)
         .padding(horizontal = 12.dp)
     ) {
       item {
         SpacerV(16.dp)
         Text(
           text = "Library",
-          style = AppTheme.typography.title,
-          color = AppTheme.colors.text
+          style = AppTheme.typography.titleLarge,
+          color = AppTheme.colors.onSurface
         )
         SpacerV(12.dp)
       }
@@ -60,13 +60,13 @@ fun LibraryScreen(
     Box(
       modifier = Modifier
         .fillMaxSize()
-        .background(AppTheme.colors.background),
+        .background(AppTheme.colors.surface),
       contentAlignment = Alignment.Center
     ) {
       Text(
         text = "No saved games yet.",
-        style = AppTheme.typography.title,
-        color = AppTheme.colors.text
+        style = AppTheme.typography.titleLarge,
+        color = AppTheme.colors.onSurface
       )
     }
     return
@@ -75,15 +75,15 @@ fun LibraryScreen(
   LazyColumn(
     modifier = Modifier
       .fillMaxSize()
-      .background(AppTheme.colors.background)
+      .background(AppTheme.colors.surface)
       .padding(horizontal = 12.dp)
   ) {
     item {
       SpacerV(16.dp)
       Text(
         text = "Library",
-        style = AppTheme.typography.title,
-        color = AppTheme.colors.text
+        style = AppTheme.typography.titleLarge,
+        color = AppTheme.colors.onSurface
       )
       SpacerV(12.dp)
     }

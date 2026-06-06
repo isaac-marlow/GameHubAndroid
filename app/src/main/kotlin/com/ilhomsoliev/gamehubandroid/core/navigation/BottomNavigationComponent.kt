@@ -64,15 +64,15 @@ fun BottomNavigationComponent(
         label = {
           Text(
             text = item.label,
-            style = AppTheme.typography.caption
+            style = AppTheme.typography.bodyLarge
           )
         },
         colors = NavigationBarItemDefaults.colors(
           selectedIconColor = AppTheme.colors.primary,
           selectedTextColor = AppTheme.colors.primary,
-          unselectedIconColor = AppTheme.colors.secondaryText,
-          unselectedTextColor = AppTheme.colors.secondaryText,
-          indicatorColor = AppTheme.colors.card
+          unselectedIconColor = AppTheme.colors.onSurface,
+          unselectedTextColor = AppTheme.colors.onSurface,
+          indicatorColor = AppTheme.colors.onSurface
         )
       )
     }

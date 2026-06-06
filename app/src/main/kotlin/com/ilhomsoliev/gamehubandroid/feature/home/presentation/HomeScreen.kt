@@ -55,7 +55,7 @@ private fun HomeContent(
   LazyColumn(
     modifier = Modifier
       .fillMaxSize()
-      .background(AppTheme.colors.background)
+      .background(AppTheme.colors.surface)
   ) {
 
     item {
@@ -63,15 +63,15 @@ private fun HomeContent(
       Text(
         modifier = Modifier.padding(horizontal = 8.dp),
         text = "Welcome back,",
-        style = AppTheme.typography.body,
-        color = AppTheme.colors.secondaryText
+        style = AppTheme.typography.bodyMedium,
+        color = AppTheme.colors.onSurface
       )
       SpacerV(8.dp)
       Text(
         modifier = Modifier.padding(horizontal = 8.dp),
         text = "Gamer",
-        style = AppTheme.typography.title.copy(fontSize = 32.sp),
-        color = AppTheme.colors.text
+        style = AppTheme.typography.titleLarge.copy(fontSize = 32.sp),
+        color = AppTheme.colors.onSurface
       )
     }
 
