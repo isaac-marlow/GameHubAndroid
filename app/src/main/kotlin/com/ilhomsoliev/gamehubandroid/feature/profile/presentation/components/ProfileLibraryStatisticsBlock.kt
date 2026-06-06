@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
+import com.ilhomsoliev.gamehubandroid.core.ui.ContentBlock
 import com.ilhomsoliev.gamehubandroid.core.ui.SpacerH
 import com.ilhomsoliev.gamehubandroid.core.ui.SpacerV
 import com.ilhomsoliev.gamehubandroid.core.ui.applyCardBackground
@@ -27,41 +28,38 @@ fun LazyListScope.ProfileLibraryStatisticsBlock(
   wishlist: Int,
 ) {
   item {
-    Text(
-      text = "Library Statistics",
-      style = AppTheme.typography.headlineSmall, color = AppTheme.colors.onSurface,
-    )
-    SpacerV(16.dp)
-    Row(modifier = Modifier.fillMaxWidth()) {
-      Stat(
-        modifier = Modifier.weight(1f),
-        label = "Completed",
-        icon = Icons.Default.DoneAll,
-        stat = completed
-      )
-      SpacerH(8.dp)
-      Stat(
-        modifier = Modifier.weight(1f),
-        label = "Currently Playing",
-        icon = Icons.Default.PlayCircle,
-        stat = currentlyPlaying
-      )
-    }
-    SpacerV(8.dp)
-    Row(modifier = Modifier.fillMaxWidth()) {
-      Stat(
-        modifier = Modifier.weight(1f),
-        label = "Favorites",
-        icon = Icons.Default.FavoriteBorder,
-        stat = favorites
-      )
-      SpacerH(8.dp)
-      Stat(
-        modifier = Modifier.weight(1f),
-        label = "Wishlist",
-        icon = Icons.Default.Bookmark,
-        stat = wishlist
-      )
+    ContentBlock(title = "Library Statistics") {
+      Row(modifier = Modifier.fillMaxWidth()) {
+        Stat(
+          modifier = Modifier.weight(1f),
+          label = "Completed",
+          icon = Icons.Default.DoneAll,
+          stat = completed
+        )
+        SpacerH(8.dp)
+        Stat(
+          modifier = Modifier.weight(1f),
+          label = "Currently Playing",
+          icon = Icons.Default.PlayCircle,
+          stat = currentlyPlaying
+        )
+      }
+      SpacerV(8.dp)
+      Row(modifier = Modifier.fillMaxWidth()) {
+        Stat(
+          modifier = Modifier.weight(1f),
+          label = "Favorites",
+          icon = Icons.Default.FavoriteBorder,
+          stat = favorites
+        )
+        SpacerH(8.dp)
+        Stat(
+          modifier = Modifier.weight(1f),
+          label = "Wishlist",
+          icon = Icons.Default.Bookmark,
+          stat = wishlist
+        )
+      }
     }
   }
 }
@@ -88,4 +86,5 @@ private fun Stat(
       color = AppTheme.colors.onSurfaceVar,
     )
   }
+
 }

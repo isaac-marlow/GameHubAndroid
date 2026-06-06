@@ -29,14 +29,21 @@ import org.koin.androidx.compose.koinViewModel
 @Composable
 fun ProfileScreen(
   viewModel: ProfileViewModel = koinViewModel(),
-
-  ) {
+  openSettings: () -> Unit
+) {
 
   val state by viewModel.uiState.collectAsState()
 
   ProfileContent(
     state = state,
     onAction = {
+      when (it) {
+        ProfileUiAction.Logout -> TODO()
+        ProfileUiAction.OpenEditProfile -> TODO()
+        ProfileUiAction.OpenRecentlyViewed -> TODO()
+        ProfileUiAction.OpenSavedPosts -> TODO()
+        ProfileUiAction.OpenSettings -> openSettings()
+      }
       viewModel.handleAction(it)
     }
   )
@@ -64,8 +71,12 @@ fun ProfileContent(
     LazyColumn(
       modifier = Modifier
         .fillMaxWidth()
-        .padding(paddingValues)
-        .padding(horizontal = 16.dp)
+        .padding(
+          top = paddingValues.calculateTopPadding(),
+          bottom = paddingValues.calculateBottomPadding(),
+          start = 16.dp,
+          end = 16.dp
+        )
     ) {
       item {
         UserInfoBlock(

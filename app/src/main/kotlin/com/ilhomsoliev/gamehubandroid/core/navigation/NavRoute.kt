@@ -13,6 +13,9 @@ sealed interface NavRoute {
   object Home : NavRoute
 
   @Serializable
+  object Settings : NavRoute
+
+  @Serializable
   data class Search(
     val genreId: Int? = null,
     val openedFromHomeSearch: Boolean = false

@@ -16,7 +16,6 @@ class ProfileScreenPreviewProvider : PreviewParameterProvider<ProfileUiState> {
         bio = "Hello my lorem impusm some text more of the text here take it more name is something android developer",
       )
     )
-
 }
 
 @Preview
