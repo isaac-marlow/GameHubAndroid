@@ -5,6 +5,7 @@ import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
@@ -14,7 +15,6 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.unit.dp
 import com.ilhomsoliev.gamehubandroid.core.ui.theme.AppTheme
 
@@ -37,7 +37,7 @@ fun Modifier.shimmer(
     label = "shimmerProgress"
   )
 
-  val resolvedBase = baseColor ?: AppTheme.colors.secondary
+  val resolvedBase = baseColor ?: AppTheme.colors.surfaceBright
   val resolvedHighlight = highlightColor ?: resolvedBase.copy(alpha = 0.45f)
 
   this

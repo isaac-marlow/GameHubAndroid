@@ -37,7 +37,7 @@ fun BottomNavigationComponent(
 
   val currentRoute = navBackStackEntry?.destination?.route.orEmpty()
 
-  NavigationBar(containerColor = AppTheme.colors.secondary) {
+  NavigationBar(containerColor = AppTheme.colors.surfaceLow) {
     items.forEach { item ->
       val itemRoute = item.destination::class.qualifiedName.orEmpty()
       val selected = currentRoute.startsWith(itemRoute)
@@ -58,7 +58,7 @@ fun BottomNavigationComponent(
         icon = {
           Icon(
             imageVector = item.icon,
-            contentDescription = item.label
+            contentDescription = item.label,
           )
         },
         label = {
@@ -69,10 +69,10 @@ fun BottomNavigationComponent(
         },
         colors = NavigationBarItemDefaults.colors(
           selectedIconColor = AppTheme.colors.primary,
-          selectedTextColor = AppTheme.colors.primary,
-          unselectedIconColor = AppTheme.colors.onSurface,
-          unselectedTextColor = AppTheme.colors.onSurface,
-          indicatorColor = AppTheme.colors.onSurface
+          selectedTextColor = AppTheme.colors.onSurface,
+          unselectedIconColor = AppTheme.colors.onSurfaceVar,
+          unselectedTextColor = AppTheme.colors.onSurfaceVar,
+          indicatorColor = AppTheme.colors.secondary
         )
       )
     }

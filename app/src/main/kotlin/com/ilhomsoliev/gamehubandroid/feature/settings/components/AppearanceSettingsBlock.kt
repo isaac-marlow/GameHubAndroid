@@ -12,8 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.ilhomsoliev.gamehubandroid.core.ui.ContentBlock
 import com.ilhomsoliev.gamehubandroid.core.ui.RowSelector
-import com.ilhomsoliev.gamehubandroid.core.ui.applyCardBackground
 import com.ilhomsoliev.gamehubandroid.core.ui.icons.PaletteIcon
+import com.ilhomsoliev.gamehubandroid.core.ui.modifier.applyCardBackground
 import com.ilhomsoliev.gamehubandroid.core.ui.slot.GHSlot
 
 @Composable

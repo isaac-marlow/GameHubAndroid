@@ -1,7 +1,5 @@
 package com.ilhomsoliev.gamehubandroid.core.ui
 
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -15,6 +13,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -23,7 +22,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.ilhomsoliev.gamehubandroid.core.ui.modifier.gameHubRoundedBackground
+import com.ilhomsoliev.gamehubandroid.core.ui.modifier.applyCardBackground
 import com.ilhomsoliev.gamehubandroid.core.ui.modifier.shimmer
 import com.ilhomsoliev.gamehubandroid.core.ui.theme.AppTheme
 import com.ilhomsoliev.gamehubandroid.feature.game.domain.GameModel
@@ -36,11 +35,16 @@ fun GameCardItem(
   isSaved: Boolean = false,
   onActionClick: (() -> Unit)? = null,
 ) {
+  val releaseText = gameModel.releaseYear
+    ?: if (gameModel.isTba) "TBA" else "Unknown release date"
+  val primaryGenre = gameModel.genres.firstOrNull()?.name
+  val subtitle =
+    listOfNotNull(releaseText, primaryGenre, gameModel.rating + " ★").joinToString(" • ")
+
   Row(
     modifier = modifier
       .fillMaxWidth()
-      .gameHubRoundedBackground()
-      .padding(12.dp),
+      .applyCardBackground(),
     verticalAlignment = Alignment.CenterVertically
   ) {
     GlideAsyncImage(
@@ -57,63 +61,29 @@ fun GameCardItem(
     Column(
       modifier = Modifier.weight(1f)
     ) {
-      val releaseText = gameModel.releaseYear
-        ?: if (gameModel.isTba) "TBA" else "Unknown release date"
-      val primaryGenre = gameModel.genres.firstOrNull()?.name
-      val subtitle = listOfNotNull(releaseText, primaryGenre).joinToString(" • ")
+      Text(
+        text = gameModel.name,
+        style = AppTheme.typography.titleLarge,
+        color = AppTheme.colors.onSurface
+      )
 
-      Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.Top
-      ) {
-        Text(
-          modifier = Modifier.weight(1f),
-          text = gameModel.name,
-          style = AppTheme.typography.titleLarge.copy(fontSize = 18.sp),
-          color = AppTheme.colors.onSurface
-        )
-
-        if (showAddButton) {
-          val actionModifier = if (onActionClick != null) {
-            Modifier.clickable { onActionClick() }
-          } else {
-            Modifier
-          }
-          Icon(
-            imageVector = if (isSaved) Icons.Default.Delete else Icons.Default.Add,
-            contentDescription = if (isSaved) "Remove from list" else "Add to list",
-            tint = AppTheme.colors.onSurface,
-            modifier = actionModifier
-              .size(24.dp)
-              .padding(start = 8.dp),
-          )
-        }
-      }
-      SpacerV(4.dp)
+      SpacerV(8.dp)
 
       Text(
         text = subtitle,
         color = AppTheme.colors.onSurface,
         fontSize = 14.sp
       )
+    }
 
-      SpacerV(10.dp)
-
-      Row(
-        verticalAlignment = Alignment.CenterVertically
-      ) {
-/*
-        PlatformIcon(Icons.Outlined.DesktopWindows)
-        Spacer(modifier = Modifier.width(8.dp))
-        PlatformIcon(Icons.Outlined.Gamepad)
-        Spacer(modifier = Modifier.width(12.dp))
-*/
-        RatingComponent(
-          modifier = Modifier
-            .padding(horizontal = 10.dp, vertical = 2.dp),
-          type = RatingComponentType.Small,
-          value = gameModel.rating
+    if (showAddButton) {
+      IconButton(modifier = Modifier.padding(start = 8.dp), onClick = {
+        onActionClick?.invoke()
+      }) {
+        Icon(
+          imageVector = if (isSaved) Icons.Default.Delete else Icons.Default.Add,
+          contentDescription = if (isSaved) "Remove from list" else "Add to list",
+          tint = AppTheme.colors.onSurface,
         )
       }
     }
@@ -127,8 +97,7 @@ fun GameCardItemPlaceholder(
   Row(
     modifier = modifier
       .fillMaxWidth()
-      .gameHubRoundedBackground()
-      .padding(12.dp),
+      .applyCardBackground(),
     verticalAlignment = Alignment.CenterVertically
   ) {
     Box(
