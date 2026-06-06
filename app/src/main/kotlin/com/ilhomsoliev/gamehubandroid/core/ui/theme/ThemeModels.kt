@@ -7,18 +7,32 @@ import androidx.compose.ui.text.TextStyle
 // TODO Add as you go
 @Immutable
 data class AppColors(
+  val primary: Color,
+  val secondary: Color,
+  val surface: Color,
+  val surfaceLow: Color,
+  val surfaceBright: Color,
+  // Text
+  val onSurface: Color,
+  val onSurfaceVar: Color,
+  val onPrimary: Color,
+  // Other
   val background: Color,
   val text: Color,
   val card: Color,
-  val primary: Color,
   val primaryText: Color,
-  val secondary: Color,
   val secondaryText: Color,
 
 )
 
 @Immutable
 data class AppTypography(
+  val headlineSmall: TextStyle,
+  val titleLarge: TextStyle,
+  val bodyLarge: TextStyle,
+  val bodyMedium: TextStyle,
+  val labelMedium: TextStyle,
+  // Other
   val body: TextStyle,
   val title: TextStyle,
   val subtitle: TextStyle,
