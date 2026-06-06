@@ -10,10 +10,17 @@ val LightColors = AppColors(
   background = Color(0xFFF5F5F7),
   text = Color(0xFF1D1D1F),
   card = Color(0xFFFFFFFF),
-  primary = Color(0xFF00B300),
   primaryText = Color(0xFFFFFFFF),
   secondary = Color(0xFFF0F0F5),
   secondaryText = Color(0xFF1D1D1F),
+
+  primary = Color(0xFF84d7ac),
+  surface = Color(0xFF121416),
+  surfaceLow = Color(0xFF1a1c1e),
+  surfaceBright = Color(0xFF37393b),
+  onSurface = Color(0xFFe2e2e5),
+  onSurfaceVar = Color(0xFFbec9c0),
+  onPrimary = Color(0xFF003823),
 )
 
 val DarkColors = AppColors(
@@ -24,6 +31,14 @@ val DarkColors = AppColors(
   primaryText = Color(0xFF121212),
   secondary = Color(0xFF2A2A2A),
   secondaryText = Color(0xFFE8E8E8),
+
+  // TODO
+  surface = Color(0xFF121416),
+  surfaceLow = Color(0xFF1a1c1e),
+  surfaceBright = Color(0xFF37393b),
+  onSurface = Color(0xFFe2e2e5),
+  onSurfaceVar = Color(0xFFbec9c0),
+  onPrimary = Color(0xFF003823),
 )
 
 val DefaultTypography = AppTypography(
@@ -56,6 +71,32 @@ val DefaultTypography = AppTypography(
     fontSize = 14.sp,
     fontFamily = FontFamily.SansSerif,
     fontWeight = FontWeight.Normal
+  ),
+
+  headlineSmall = TextStyle(
+    fontSize = 24.sp,
+    fontFamily = FontFamily.SansSerif,
+    fontWeight = FontWeight.Bold
+  ),
+  titleLarge = TextStyle(
+    fontSize = 20.sp,
+    fontFamily = FontFamily.SansSerif,
+    fontWeight = FontWeight.SemiBold
+  ),
+  bodyLarge = TextStyle(
+    fontSize = 16.sp,
+    fontFamily = FontFamily.SansSerif,
+    fontWeight = FontWeight.Normal
+  ),
+  bodyMedium = TextStyle(
+    fontSize = 14.sp,
+    fontFamily = FontFamily.SansSerif,
+    fontWeight = FontWeight.Normal
+  ),
+  labelMedium = TextStyle(
+    fontSize = 12.sp,
+    fontFamily = FontFamily.SansSerif,
+    fontWeight = FontWeight.Medium
   )
 )
 

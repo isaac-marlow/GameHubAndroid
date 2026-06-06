@@ -32,7 +32,7 @@ fun BottomNavigationComponent(
     BottomNavItem("Home", Icons.Default.Home, NavRoute.Home),
     BottomNavItem("Search", Icons.Default.Search, NavRoute.Search()),
     BottomNavItem("Library", Icons.AutoMirrored.Filled.LibraryBooks, NavRoute.Library),
-//    BottomNavItem("Profile", Icons.Default.Person, NavRoute.Profile)
+    BottomNavItem("Profile", Icons.Default.Person, NavRoute.Profile)
   )
 
   val currentRoute = navBackStackEntry?.destination?.route.orEmpty()
