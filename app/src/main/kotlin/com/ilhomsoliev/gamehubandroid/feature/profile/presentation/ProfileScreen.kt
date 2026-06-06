@@ -17,8 +17,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.ilhomsoliev.gamehubandroid.core.ui.SpacerV
-import com.ilhomsoliev.gamehubandroid.core.ui.applyCardBackground
 import com.ilhomsoliev.gamehubandroid.core.ui.icons.SearchActivityIcon
+import com.ilhomsoliev.gamehubandroid.core.ui.modifier.applyCardBackground
 import com.ilhomsoliev.gamehubandroid.core.ui.screen_skeleton.GHTopAppBar
 import com.ilhomsoliev.gamehubandroid.core.ui.slot.GHSlot
 import com.ilhomsoliev.gamehubandroid.core.ui.theme.AppTheme

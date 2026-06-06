@@ -18,7 +18,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.ilhomsoliev.gamehubandroid.core.ui.GHButton
 import com.ilhomsoliev.gamehubandroid.core.ui.SpacerV
-import com.ilhomsoliev.gamehubandroid.core.ui.applyCardBackground
+import com.ilhomsoliev.gamehubandroid.core.ui.modifier.applyCardBackground
 import com.ilhomsoliev.gamehubandroid.core.ui.theme.AppTheme
 
 @Composable

@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 import com.ilhomsoliev.gamehubandroid.core.ui.ContentBlock
 import com.ilhomsoliev.gamehubandroid.core.ui.SpacerH
 import com.ilhomsoliev.gamehubandroid.core.ui.SpacerV
-import com.ilhomsoliev.gamehubandroid.core.ui.applyCardBackground
+import com.ilhomsoliev.gamehubandroid.core.ui.modifier.applyCardBackground
 import com.ilhomsoliev.gamehubandroid.core.ui.theme.AppTheme
 
 fun LazyListScope.ProfileLibraryStatisticsBlock(

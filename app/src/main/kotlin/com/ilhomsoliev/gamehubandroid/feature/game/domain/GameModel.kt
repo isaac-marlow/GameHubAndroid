@@ -29,6 +29,26 @@ data class GameModel(
   fun isAvailableOnConsole(): Boolean {
     return platforms.any { it.slug == "playstation5" } // TODO add more
   }
+
+  companion object {
+    val sample = GameModel(
+      id = 1,
+      slug = "sample-slug",
+      name = "Sample Game",
+      releasedDate = "2023-01-01",
+      releaseYear = "2023",
+      isTba = false,
+      backgroundImage = "https://avatars.githubusercontent.com/u/97165289",
+      rating = "4.3",
+      platforms = emptyList(),
+      stores = emptyList(),
+      genres = emptyList(),
+      tags = emptyList(),
+      esrbRating = null,
+      description = "",
+      redditDescription = "",
+    )
+  }
 }
 
 class RequirementsModel(
