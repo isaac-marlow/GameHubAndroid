@@ -133,8 +133,8 @@ fun SearchContent(
   if (showFilters.value) {
     ModalBottomSheet(
       onDismissRequest = { showFilters.value = false },
-      contentColor = AppTheme.colors.background,
-      containerColor = AppTheme.colors.background,
+      contentColor = AppTheme.colors.surface,
+      containerColor = AppTheme.colors.surface,
     ) {
       SearchFilterSheetContent(
         state = state,
@@ -156,15 +156,15 @@ fun SearchContent(
     state = listState,
     modifier = Modifier
       .fillMaxSize()
-      .background(AppTheme.colors.background)
+      .background(AppTheme.colors.surface)
   ) {
     item {
       SpacerV(16.dp)
       Text(
         modifier = Modifier.padding(horizontal = 12.dp),
         text = "Explore Games",
-        style = AppTheme.typography.title.copy(fontSize = 32.sp),
-        color = AppTheme.colors.text
+        style = AppTheme.typography.titleLarge.copy(fontSize = 32.sp),
+        color = AppTheme.colors.onSurface
       )
     }
 
@@ -200,7 +200,7 @@ fun SearchContent(
         SpacerH(6.dp)
         Text(
           text = "Filters",
-          style = AppTheme.typography.body,
+          style = AppTheme.typography.bodyMedium,
           color = AppTheme.colors.primary
         )
       }
@@ -217,8 +217,8 @@ fun SearchContent(
         ) {
           Text(
             text = "Quick Filters",
-            style = AppTheme.typography.label,
-            color = AppTheme.colors.text
+            style = AppTheme.typography.labelMedium,
+            color = AppTheme.colors.onSurface
           )
         }
         FlowRow(
@@ -246,8 +246,8 @@ fun SearchContent(
           ) {
             Text(
               text = "Genres",
-              style = AppTheme.typography.label,
-              color = AppTheme.colors.text
+              style = AppTheme.typography.labelMedium,
+              color = AppTheme.colors.onSurface
             )
           }
           FlowRow(
@@ -273,8 +273,8 @@ fun SearchContent(
             modifier = Modifier
               .padding(horizontal = 12.dp),
             text = "Trending Games",
-            style = AppTheme.typography.label,
-            color = AppTheme.colors.text
+            style = AppTheme.typography.labelMedium,
+            color = AppTheme.colors.onSurface
           )
           SpacerV(16.dp)
         }
@@ -298,8 +298,8 @@ fun SearchContent(
             Text(
               modifier = Modifier.padding(horizontal = 8.dp),
               text = "Loading more...",
-              style = AppTheme.typography.body,
-              color = AppTheme.colors.secondaryText
+              style = AppTheme.typography.bodyMedium,
+              color = AppTheme.colors.onSurface
             )
           }
         }
@@ -319,8 +319,8 @@ fun SearchContent(
         Text(
           modifier = Modifier.padding(horizontal = 8.dp),
           text = "Something went wrong. Please try again.",
-          style = AppTheme.typography.body,
-          color = AppTheme.colors.secondaryText
+          style = AppTheme.typography.bodyMedium,
+          color = AppTheme.colors.onSurface
         )
       }
     } else if (state.results.isEmpty() && state.searchQuery.isNotBlank()) {
@@ -329,8 +329,8 @@ fun SearchContent(
         Text(
           modifier = Modifier.padding(horizontal = 8.dp),
           text = "No results found.",
-          style = AppTheme.typography.body,
-          color = AppTheme.colors.secondaryText
+          style = AppTheme.typography.bodyMedium,
+          color = AppTheme.colors.onSurface
         )
       }
     } else if (state.results.isNotEmpty()) {
@@ -357,8 +357,8 @@ fun SearchContent(
         Text(
           modifier = Modifier.padding(horizontal = 8.dp),
           text = "Loading more...",
-          style = AppTheme.typography.body,
-          color = AppTheme.colors.secondaryText
+          style = AppTheme.typography.bodyMedium,
+          color = AppTheme.colors.onSurface
         )
       }
     }
@@ -376,22 +376,22 @@ private fun SearchFilterSheetContent(
   LazyColumn(
     modifier = Modifier
       .fillMaxWidth()
-      .background(AppTheme.colors.background)
+      .background(AppTheme.colors.surface)
   ) {
     item {
       Row(modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
         Text(
           text = "Filters",
-          style = AppTheme.typography.label,
-          color = AppTheme.colors.text
+          style = AppTheme.typography.labelMedium,
+          color = AppTheme.colors.onSurface
         )
       }
 
       Text(
         modifier = Modifier.padding(horizontal = 16.dp, vertical = 6.dp),
         text = "Sort by",
-        style = AppTheme.typography.label,
-        color = AppTheme.colors.text
+        style = AppTheme.typography.labelMedium,
+        color = AppTheme.colors.onSurface
       )
       FlowRow(
         modifier = Modifier
@@ -413,8 +413,8 @@ private fun SearchFilterSheetContent(
       Text(
         modifier = Modifier.padding(horizontal = 16.dp, vertical = 6.dp),
         text = "Release date",
-        style = AppTheme.typography.label,
-        color = AppTheme.colors.text
+        style = AppTheme.typography.labelMedium,
+        color = AppTheme.colors.onSurface
       )
       FlowRow(
         modifier = Modifier
@@ -437,8 +437,8 @@ private fun SearchFilterSheetContent(
         Text(
           modifier = Modifier.padding(horizontal = 16.dp, vertical = 6.dp),
           text = "Tags",
-          style = AppTheme.typography.label,
-          color = AppTheme.colors.text
+          style = AppTheme.typography.labelMedium,
+          color = AppTheme.colors.onSurface
         )
         FlowRow(
           modifier = Modifier
@@ -461,8 +461,8 @@ private fun SearchFilterSheetContent(
         Text(
           modifier = Modifier.padding(horizontal = 16.dp, vertical = 6.dp),
           text = "Genres",
-          style = AppTheme.typography.label,
-          color = AppTheme.colors.text
+          style = AppTheme.typography.labelMedium,
+          color = AppTheme.colors.onSurface
         )
         FlowRow(
           modifier = Modifier
@@ -485,8 +485,8 @@ private fun SearchFilterSheetContent(
         Text(
           modifier = Modifier.padding(horizontal = 16.dp, vertical = 6.dp),
           text = "Platforms",
-          style = AppTheme.typography.label,
-          color = AppTheme.colors.text
+          style = AppTheme.typography.labelMedium,
+          color = AppTheme.colors.onSurface
         )
         FlowRow(
           modifier = Modifier
@@ -509,8 +509,8 @@ private fun SearchFilterSheetContent(
         Text(
           modifier = Modifier.padding(horizontal = 16.dp, vertical = 6.dp),
           text = "Stores",
-          style = AppTheme.typography.label,
-          color = AppTheme.colors.text
+          style = AppTheme.typography.labelMedium,
+          color = AppTheme.colors.onSurface
         )
         FlowRow(
           modifier = Modifier
@@ -533,8 +533,8 @@ private fun SearchFilterSheetContent(
         Text(
           modifier = Modifier.padding(horizontal = 16.dp, vertical = 6.dp),
           text = "Developers",
-          style = AppTheme.typography.label,
-          color = AppTheme.colors.text
+          style = AppTheme.typography.labelMedium,
+          color = AppTheme.colors.onSurface
         )
         FlowRow(
           modifier = Modifier
@@ -557,8 +557,8 @@ private fun SearchFilterSheetContent(
         Text(
           modifier = Modifier.padding(horizontal = 16.dp, vertical = 6.dp),
           text = "Publishers",
-          style = AppTheme.typography.label,
-          color = AppTheme.colors.text
+          style = AppTheme.typography.labelMedium,
+          color = AppTheme.colors.onSurface
         )
         FlowRow(
           modifier = Modifier

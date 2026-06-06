@@ -45,8 +45,8 @@ fun RatingComponent(
     Text(
       modifier = Modifier.padding(innerPaddings),
       text = value,
-      style = AppTheme.typography.label.copy(fontSize = fontSize),
-      color = AppTheme.colors.primaryText
+      style = AppTheme.typography.labelMedium.copy(fontSize = fontSize),
+      color = AppTheme.colors.onPrimary
     )
   }
 }

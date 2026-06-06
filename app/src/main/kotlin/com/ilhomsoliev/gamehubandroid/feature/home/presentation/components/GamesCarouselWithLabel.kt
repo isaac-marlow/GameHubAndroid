@@ -47,8 +47,8 @@ fun GamesCarouselWithLabel(
     Text(
       text = label,
       modifier = Modifier.padding(horizontal = 12.dp),
-      style = AppTheme.typography.label.copy(fontSize = 18.sp),
-      color = AppTheme.colors.text
+      style = AppTheme.typography.labelMedium.copy(fontSize = 18.sp),
+      color = AppTheme.colors.onSurface
     )
     SpacerV(16.dp)
     LazyRow(

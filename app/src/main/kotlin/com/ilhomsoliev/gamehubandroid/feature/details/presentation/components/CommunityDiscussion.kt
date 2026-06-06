@@ -19,10 +19,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.fromHtml
@@ -58,8 +58,8 @@ fun CommunityDiscussion(
     ) {
       Text(
         text = "Community Discussions",
-        style = AppTheme.typography.title.copy(fontSize = 18.sp),
-        color = AppTheme.colors.text
+        style = AppTheme.typography.titleLarge.copy(fontSize = 18.sp),
+        color = AppTheme.colors.onSurface
       )
     }
 
@@ -68,8 +68,8 @@ fun CommunityDiscussion(
     if (posts.isEmpty()) {
       Text(
         text = "No community discussions yet.",
-        style = AppTheme.typography.body,
-        color = AppTheme.colors.secondaryText
+        style = AppTheme.typography.bodyMedium,
+        color = AppTheme.colors.onSurface
       )
     } else {
       posts.take(3).forEachIndexed { index, post ->

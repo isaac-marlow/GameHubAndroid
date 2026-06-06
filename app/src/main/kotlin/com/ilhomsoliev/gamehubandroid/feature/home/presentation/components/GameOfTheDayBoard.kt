@@ -67,20 +67,20 @@ fun GameOfTheDayBoard(
     ) {
       Text(
         text = "GAME OF THE DAY",
-        style = AppTheme.typography.label,
+        style = AppTheme.typography.labelMedium,
         color = AppTheme.colors.primary
       )
       SpacerV(12.dp)
       Text(
         text = game.name,
-        style = AppTheme.typography.title.copy(fontSize = 32.sp),
-        color = AppTheme.colors.text
+        style = AppTheme.typography.titleLarge.copy(fontSize = 32.sp),
+        color = AppTheme.colors.onSurface
       )
       SpacerV(12.dp)
       Text(
         text = "Released: ${game.releasedDate}",
-        style = AppTheme.typography.body,
-        color = AppTheme.colors.secondaryText
+        style = AppTheme.typography.bodyMedium,
+        color = AppTheme.colors.onSurface
       )
       SpacerV(12.dp)
       Row(verticalAlignment = Alignment.CenterVertically) {
@@ -117,14 +117,14 @@ private fun DetailsButton(
         .padding(start = 6.dp),
       imageVector = Icons.Default.PlayArrow,
       contentDescription = "",
-      tint = AppTheme.colors.primaryText
+      tint = AppTheme.colors.onPrimary
     )
     Text(
       modifier = Modifier
         .padding(top = 8.dp, end = 8.dp, bottom = 8.dp),
       text = "View details",
-      style = AppTheme.typography.label,
-      color = AppTheme.colors.primaryText
+      style = AppTheme.typography.labelMedium,
+      color = AppTheme.colors.onPrimary
     )
   }
 }

@@ -101,8 +101,8 @@ fun LazyItemScope.GameDetailsTitle(
     ) {
       Text(
         text = title,
-        style = AppTheme.typography.title.copy(fontSize = 32.sp),
-        color = AppTheme.colors.text
+        style = AppTheme.typography.titleLarge.copy(fontSize = 32.sp),
+        color = AppTheme.colors.onSurface
       )
       releaseDate?.let { releasedDate ->
         Row(
@@ -113,15 +113,15 @@ fun LazyItemScope.GameDetailsTitle(
             modifier = Modifier.size(16.dp),
             imageVector = Icons.Default.CalendarToday,
             contentDescription = "calendar",
-            tint = AppTheme.colors.secondaryText
+            tint = AppTheme.colors.onSurface
           )
 
           SpacerH(8.dp)
 
           Text(
             text = releasedDate,
-            style = AppTheme.typography.body,
-            color = AppTheme.colors.secondaryText
+            style = AppTheme.typography.bodyMedium,
+            color = AppTheme.colors.onSurface
           )
 
           if (isAvailableOnPc) {
@@ -131,7 +131,7 @@ fun LazyItemScope.GameDetailsTitle(
               modifier = Modifier.size(16.dp),
               imageVector = Icons.Default.Computer,
               contentDescription = "computer",
-              tint = AppTheme.colors.secondaryText
+              tint = AppTheme.colors.onSurface
             )
           }
 
@@ -142,7 +142,7 @@ fun LazyItemScope.GameDetailsTitle(
               modifier = Modifier.size(16.dp),
               imageVector = Icons.Default.VideogameAsset,
               contentDescription = "console",
-              tint = AppTheme.colors.secondaryText
+              tint = AppTheme.colors.onSurface
             )
           }
         }

@@ -57,14 +57,14 @@ private fun AuthContent(
 
           Text(
             text = "GameHub",
-            style = AppTheme.typography.title,
+            style = AppTheme.typography.titleLarge,
             color = AppTheme.colors.primary
           )
           SpacerV(16.dp)
           Text(
             "Your ultimate gaming companion",
-            style = AppTheme.typography.body,
-            color = AppTheme.colors.secondaryText
+            style = AppTheme.typography.bodyMedium,
+            color = AppTheme.colors.onSurface
           )
         }
       }

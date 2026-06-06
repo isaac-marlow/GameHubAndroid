@@ -13,7 +13,7 @@ import com.ilhomsoliev.gamehubandroid.core.ui.theme.AppTheme
 
 @Composable
 fun Modifier.gameHubRoundedBackground(
-  backgroundColor: Color = AppTheme.colors.card,
+  backgroundColor: Color = AppTheme.colors.onSurface,
   borderStrokeColor: Color = AppTheme.colors.secondary,
 ): Modifier {
   val shape = RoundedCornerShape(AppTheme.shapes.cardRadius)

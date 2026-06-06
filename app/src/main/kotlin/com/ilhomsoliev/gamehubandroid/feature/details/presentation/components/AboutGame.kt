@@ -53,8 +53,8 @@ fun LazyItemScope.AboutGame(
   ) {
     Text(
       text = "About",
-      style = AppTheme.typography.title.copy(fontSize = 18.sp),
-      color = AppTheme.colors.text
+      style = AppTheme.typography.titleLarge.copy(fontSize = 18.sp),
+      color = AppTheme.colors.onSurface
     )
 
     SpacerV(16.dp)
@@ -86,8 +86,8 @@ fun LazyItemScope.AboutGame(
       ) { expanded ->
         Text(
           text = if (expanded) description else collapsedDescription,
-          style = AppTheme.typography.body,
-          color = AppTheme.colors.text
+          style = AppTheme.typography.bodyMedium,
+          color = AppTheme.colors.onSurface
         )
       }
 
@@ -106,7 +106,7 @@ fun LazyItemScope.AboutGame(
         ) {
           Text(
             text = if (isExpanded) "Show less" else "Show more",
-            style = AppTheme.typography.body.copy(color = AppTheme.colors.primary)
+            style = AppTheme.typography.bodyMedium.copy(color = AppTheme.colors.primary)
           )
           SpacerH(4.dp)
           Icon(

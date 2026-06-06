@@ -4,7 +4,6 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 
-// TODO Add as you go
 @Immutable
 data class AppColors(
   val primary: Color,
@@ -12,17 +11,10 @@ data class AppColors(
   val surface: Color,
   val surfaceLow: Color,
   val surfaceBright: Color,
-  // Text
+  // Text colors
   val onSurface: Color,
   val onSurfaceVar: Color,
   val onPrimary: Color,
-  // Other
-  val background: Color,
-  val text: Color,
-  val card: Color,
-  val primaryText: Color,
-  val secondaryText: Color,
-
 )
 
 @Immutable
@@ -32,20 +24,17 @@ data class AppTypography(
   val bodyLarge: TextStyle,
   val bodyMedium: TextStyle,
   val labelMedium: TextStyle,
-  // Other
-  val body: TextStyle,
-  val title: TextStyle,
-  val subtitle: TextStyle,
-  val label: TextStyle,
-  val button: TextStyle,
-  val caption: TextStyle
 )
 
 @Immutable
 data class AppShapes(
-  val cardRadius: Float,
+  val radiusNone: Float,
+  val radiusXs: Float,
   val radiusSm: Float,
   val radiusMd: Float,
   val radiusLg: Float,
-  val radiusXl: Float
+  val radiusXl: Float,
+  val radiusFull: Float,
+  // out of system design
+  val cardRadius: Float,
 )

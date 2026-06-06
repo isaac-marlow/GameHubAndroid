@@ -18,7 +18,7 @@ fun GHChip(
   onClick: (() -> Unit)? = null
 ) {
   val backgroundColor = if (isActive) AppTheme.colors.primary else AppTheme.colors.secondary
-  val textColor = if (isActive) AppTheme.colors.primaryText else AppTheme.colors.text
+  val textColor = if (isActive) AppTheme.colors.onPrimary else AppTheme.colors.onSurface
 
   Box(
     modifier = modifier
@@ -31,7 +31,7 @@ fun GHChip(
       modifier = Modifier
         .padding(6.dp),
       text = text,
-      style = AppTheme.typography.body,
+      style = AppTheme.typography.bodyMedium,
       color = textColor
     )
   }

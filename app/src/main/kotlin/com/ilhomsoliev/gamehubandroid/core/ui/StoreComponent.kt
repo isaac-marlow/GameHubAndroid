@@ -24,8 +24,8 @@ fun StoreComponent(
   ) {
     Text(
       text = storeModel.name,
-      style = AppTheme.typography.caption,
-      color = AppTheme.colors.text
+      style = AppTheme.typography.bodyLarge,
+      color = AppTheme.colors.onSurface
     )
   }
 }

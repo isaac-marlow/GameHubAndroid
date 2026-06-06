@@ -1,6 +1,6 @@
 package com.ilhomsoliev.gamehubandroid.core.ui
 
-import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.clickable
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
@@ -71,8 +70,8 @@ fun GameCardItem(
         Text(
           modifier = Modifier.weight(1f),
           text = gameModel.name,
-          style = AppTheme.typography.title.copy(fontSize = 18.sp),
-          color = AppTheme.colors.text
+          style = AppTheme.typography.titleLarge.copy(fontSize = 18.sp),
+          color = AppTheme.colors.onSurface
         )
 
         if (showAddButton) {
@@ -84,7 +83,7 @@ fun GameCardItem(
           Icon(
             imageVector = if (isSaved) Icons.Default.Delete else Icons.Default.Add,
             contentDescription = if (isSaved) "Remove from list" else "Add to list",
-            tint = AppTheme.colors.text,
+            tint = AppTheme.colors.onSurface,
             modifier = actionModifier
               .size(24.dp)
               .padding(start = 8.dp),
@@ -95,7 +94,7 @@ fun GameCardItem(
 
       Text(
         text = subtitle,
-        color = AppTheme.colors.secondaryText,
+        color = AppTheme.colors.onSurface,
         fontSize = 14.sp
       )
 
